@@ -6,7 +6,7 @@ so that the first element will be the last and the second will be the before the
 
 ## Whiteboard Process 
 
-![Whiteboard]()
+![Whiteboard](java/array-reverse/reverse.PNG)
 
 
 

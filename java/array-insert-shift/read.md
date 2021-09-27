@@ -4,7 +4,7 @@
 
 ## Whiteboard Process
 
-![wightboard](code 2.PNG)
+![wightboard](https://github.com/Kafaween/data-structures-and-algorithms/blob/main/java/array-insert-shift/code%202.PNG)
 
 ## code
 

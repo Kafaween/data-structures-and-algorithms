@@ -40,6 +40,95 @@ public class linkedlistStructure {
     return false;
   }
 
+  public  void  append(String value){
+    if(head==null){
+      linkedlistNode node = new linkedlistNode(value);
+      head=node;
+    }
+    else{
+      linkedlistNode currunt;
+      currunt=head;
+      while(currunt.getNext()!=null){
+        currunt=currunt.getNext();
+      }
+      linkedlistNode node=new linkedlistNode(value);
+      currunt.setNext(node);
+    }
+  }
+
+public void insert_before(String value,String new_value){
+  if(is_empty()) {
+    System.out.println("\n The list is empty ");
+
+  }
+  else {
+    boolean is_here=false;
+    boolean first=false;
+    linkedlistNode currunt;
+    linkedlistNode node=new linkedlistNode(new_value);
+    currunt=head;
+    if(currunt.getValue()==value){
+      first=true;
+    }
+    else {
+    while (currunt.getNext()!=null){
+      if(currunt.getNext().getValue()==value){
+        is_here=true;
+        break;
+      }
+      currunt=currunt.getNext();
+    }}
+    if(is_here==true){
+      linkedlistNode temp=currunt.getNext();
+      currunt.setNext(node);
+      node.setNext(temp);
+
+    }
+    else if(first==true){
+      node.setNext(currunt);
+      head=node;
+    }
+    else{
+      System.out.println("item is not in the list");
+    }
+  }
+}
+
+
+  public void insert_after(String value,String new_value){
+    if(is_empty()) {
+      System.out.println("\n The list is empty ");
+
+    }
+    else {
+      boolean is_here=false;
+      linkedlistNode currunt;
+      linkedlistNode node=new linkedlistNode(new_value);
+      currunt=head;
+
+      while (currunt.getNext()!=null){
+        if(currunt.getValue()==value){
+          is_here=true;
+          break;
+        }
+        currunt=currunt.getNext();
+      }
+      if(is_here==true){
+        linkedlistNode temp=currunt.getNext();
+        currunt.setNext(node);
+        node.setNext(temp);
+
+      }
+      else if(currunt.getValue()==value){
+
+        currunt.setNext(node);
+      }
+      else{
+        System.out.println("item is not in the list");
+      }
+    }
+  }
+
   public String to_string() {
     if (head == null) {
       return "List is empty";
@@ -59,6 +148,8 @@ public class linkedlistStructure {
       return (output+"NULL");
     }
   }
+
+
   public int size() {
     return size;
   }

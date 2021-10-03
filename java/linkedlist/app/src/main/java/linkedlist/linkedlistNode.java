@@ -5,9 +5,7 @@ public class linkedlistNode {
   private linkedlistNode Next;
 
 
-  public boolean is_empty(){
-    return true;
-  }
+
 
   public linkedlistNode(String value) {
     this.value = value;

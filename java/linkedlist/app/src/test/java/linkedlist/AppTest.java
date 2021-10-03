@@ -8,71 +8,145 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test
-    @DisplayName("Can successfully instantiate an empty linked list")
-  void test1() {
-        linkedlistStructure test = new linkedlistStructure();
-        assertEquals(true, test.is_empty());
-    }
+//    @Test
+//    @DisplayName("Can successfully instantiate an empty linked list")
+//  void test1() {
+//        linkedlistStructure test = new linkedlistStructure();
+//        assertEquals(true, test.is_empty());
+//    }
+//  @Test
+//  @DisplayName("Can properly insert into the linked list")
+//  void test2() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    assertEquals("2", test.head.getValue());
+//  }
+//  @Test
+//  @DisplayName("The head property will properly point to the first node in the linked list")
+//  void test3() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    assertEquals("2", test.head.getValue());
+//  }
+//  @Test
+//  @DisplayName("Can properly insert multiple nodes into the linked list")
+//  void test4() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    assertEquals(4, test.size());
+//  }
+//  @Test
+//  @DisplayName("Will return true when finding a value within the linked list that exists")
+//  void test5() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    assertEquals(true, test.includes("7"));
+//  }
+//  @Test
+//  @DisplayName("Will return false when searching for a value in the linked list that does not exist")
+//  void test6() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    assertEquals(false, test.includes("3"));
+//  }
+//  @Test
+//  @DisplayName("Can properly return a collection of all the values that exist in the linked list")
+//  void test7() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> NULL", test.to_string());
+//  }
   @Test
-  @DisplayName("Can properly insert into the linked list")
+  @DisplayName("Can successfully add a node to the end of the linked list")
+  void test1() {
+    linkedlistStructure test = new linkedlistStructure();
+    test.insert("4");
+    test.insert("1");
+    test.insert("7");
+    test.insert("2");
+    test.append("10");
+    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> NULL", test.to_string());
+  }
+  @Test
+  @DisplayName("Can successfully add multiple nodes to the end of a linked list")
   void test2() {
     linkedlistStructure test = new linkedlistStructure();
     test.insert("4");
     test.insert("1");
     test.insert("7");
     test.insert("2");
-    assertEquals("2", test.head.getValue());
+    test.append("10");
+    test.append("11");
+    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL", test.to_string());
   }
   @Test
-  @DisplayName("The head property will properly point to the first node in the linked list")
+  @DisplayName("Can successfully insert a node before a node located i the middle of a linked list")
   void test3() {
     linkedlistStructure test = new linkedlistStructure();
     test.insert("4");
     test.insert("1");
     test.insert("7");
     test.insert("2");
-    assertEquals("2", test.head.getValue());
+    test.append("10");
+    test.append("11");
+    test.insert_before("4","15");
+    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 15 } -> { 4 } -> { 10 } -> { 11 } -> NULL", test.to_string());
   }
   @Test
-  @DisplayName("Can properly insert multiple nodes into the linked list")
+  @DisplayName("Can successfully insert a node before the first node of a linked list")
   void test4() {
     linkedlistStructure test = new linkedlistStructure();
     test.insert("4");
     test.insert("1");
     test.insert("7");
     test.insert("2");
-    assertEquals(4, test.size());
+    test.append("10");
+    test.append("11");
+    test.insert_before("2","15");
+    assertEquals("{ 15 } -> { 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL", test.to_string());
   }
   @Test
-  @DisplayName("Will return true when finding a value within the linked list that exists")
+  @DisplayName("Can successfully insert after a node in the middle of the linked list")
   void test5() {
     linkedlistStructure test = new linkedlistStructure();
     test.insert("4");
     test.insert("1");
     test.insert("7");
     test.insert("2");
-    assertEquals(true, test.includes("7"));
+    test.append("10");
+    test.append("11");
+    test.insert_after("4","15");
+    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 15 } -> { 10 } -> { 11 } -> NULL", test.to_string());
   }
   @Test
-  @DisplayName("Will return false when searching for a value in the linked list that does not exist")
+  @DisplayName("Can successfully insert a node after the last node of the linked list")
   void test6() {
     linkedlistStructure test = new linkedlistStructure();
     test.insert("4");
     test.insert("1");
     test.insert("7");
     test.insert("2");
-    assertEquals(false, test.includes("3"));
+    test.append("10");
+    test.append("11");
+    test.insert_after("11","15");
+    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> { 15 } -> NULL", test.to_string());
   }
-  @Test
-  @DisplayName("Can properly return a collection of all the values that exist in the linked list")
-  void test7() {
-    linkedlistStructure test = new linkedlistStructure();
-    test.insert("4");
-    test.insert("1");
-    test.insert("7");
-    test.insert("2");
-    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> NULL", test.to_string());
-  }
-
 }

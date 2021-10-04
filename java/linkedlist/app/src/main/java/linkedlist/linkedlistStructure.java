@@ -4,6 +4,34 @@ public class linkedlistStructure {
   protected  linkedlistNode head;
   private int size;
 
+  public String linked_list_kth(int k){
+
+    if(is_empty()){
+      return "this list is empty";
+    }
+    else{
+    if(k<0){
+      return "Exception";
+    }
+    int counter=size-k-1;
+    if(counter<0){
+      return "Exception";
+    }
+
+    linkedlistNode c ;
+    c=head;
+    while (c.getNext()!=null && counter!=0){
+      c=c.getNext();
+      counter--;
+
+    }
+    return c.getValue();
+    }
+  }
+
+
+
+
 
   public void insert(String value){
     if(head ==null){
@@ -44,6 +72,7 @@ public class linkedlistStructure {
     if(head==null){
       linkedlistNode node = new linkedlistNode(value);
       head=node;
+      size++;
     }
     else{
       linkedlistNode currunt;
@@ -53,6 +82,7 @@ public class linkedlistStructure {
       }
       linkedlistNode node=new linkedlistNode(value);
       currunt.setNext(node);
+      size++;
     }
   }
 
@@ -82,11 +112,13 @@ public void insert_before(String value,String new_value){
       linkedlistNode temp=currunt.getNext();
       currunt.setNext(node);
       node.setNext(temp);
+      size++;
 
     }
     else if(first==true){
       node.setNext(currunt);
       head=node;
+      size++;
     }
     else{
       System.out.println("item is not in the list");
@@ -117,11 +149,13 @@ public void insert_before(String value,String new_value){
         linkedlistNode temp=currunt.getNext();
         currunt.setNext(node);
         node.setNext(temp);
+        size++;
 
       }
       else if(currunt.getValue()==value){
 
         currunt.setNext(node);
+        size++;
       }
       else{
         System.out.println("item is not in the list");

@@ -23,5 +23,9 @@ public class App {
       System.out.println(list.to_string());
       list.insert_after("5","16");
       System.out.println(list.to_string());
+
+      list.linked_list_kth(6);
+      System.out.println(list.linked_list_kth(2));
+
     }
 }

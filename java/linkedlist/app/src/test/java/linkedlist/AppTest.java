@@ -74,20 +74,84 @@ class AppTest {
 //    test.insert("2");
 //    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> NULL", test.to_string());
 //  }
+//  @Test
+//  @DisplayName("Can successfully add a node to the end of the linked list")
+//  void test1() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    test.append("10");
+//    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> NULL", test.to_string());
+//  }
+//  @Test
+//  @DisplayName("Can successfully add multiple nodes to the end of a linked list")
+//  void test2() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    test.append("10");
+//    test.append("11");
+//    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL", test.to_string());
+//  }
+//  @Test
+//  @DisplayName("Can successfully insert a node before a node located i the middle of a linked list")
+//  void test3() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    test.append("10");
+//    test.append("11");
+//    test.insert_before("4","15");
+//    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 15 } -> { 4 } -> { 10 } -> { 11 } -> NULL", test.to_string());
+//  }
+//  @Test
+//  @DisplayName("Can successfully insert a node before the first node of a linked list")
+//  void test4() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    test.append("10");
+//    test.append("11");
+//    test.insert_before("2","15");
+//    assertEquals("{ 15 } -> { 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL", test.to_string());
+//  }
+//  @Test
+//  @DisplayName("Can successfully insert after a node in the middle of the linked list")
+//  void test5() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    test.append("10");
+//    test.append("11");
+//    test.insert_after("4","15");
+//    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 15 } -> { 10 } -> { 11 } -> NULL", test.to_string());
+//  }
+//  @Test
+//  @DisplayName("Can successfully insert a node after the last node of the linked list")
+//  void test6() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    test.append("10");
+//    test.append("11");
+//    test.insert_after("11","15");
+//    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> { 15 } -> NULL", test.to_string());
+//  }
   @Test
-  @DisplayName("Can successfully add a node to the end of the linked list")
-  void test1() {
-    linkedlistStructure test = new linkedlistStructure();
-    test.insert("4");
-    test.insert("1");
-    test.insert("7");
-    test.insert("2");
-    test.append("10");
-    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> NULL", test.to_string());
-  }
-  @Test
-  @DisplayName("Can successfully add multiple nodes to the end of a linked list")
-  void test2() {
+  @DisplayName("Where k is greater than the length of the linked list")
+  void test7() {
     linkedlistStructure test = new linkedlistStructure();
     test.insert("4");
     test.insert("1");
@@ -95,11 +159,13 @@ class AppTest {
     test.insert("2");
     test.append("10");
     test.append("11");
-    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL", test.to_string());
+//    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+
+    assertEquals("Exception", test.linked_list_kth(7));
   }
   @Test
-  @DisplayName("Can successfully insert a node before a node located i the middle of a linked list")
-  void test3() {
+  @DisplayName("Where k and the length of the list are the same")
+  void test8() {
     linkedlistStructure test = new linkedlistStructure();
     test.insert("4");
     test.insert("1");
@@ -107,12 +173,13 @@ class AppTest {
     test.insert("2");
     test.append("10");
     test.append("11");
-    test.insert_before("4","15");
-    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 15 } -> { 4 } -> { 10 } -> { 11 } -> NULL", test.to_string());
+//    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+
+    assertEquals("Exception", test.linked_list_kth(6));
   }
   @Test
-  @DisplayName("Can successfully insert a node before the first node of a linked list")
-  void test4() {
+  @DisplayName("Where k is not a positive integer")
+  void test9() {
     linkedlistStructure test = new linkedlistStructure();
     test.insert("4");
     test.insert("1");
@@ -120,12 +187,23 @@ class AppTest {
     test.insert("2");
     test.append("10");
     test.append("11");
-    test.insert_before("2","15");
-    assertEquals("{ 15 } -> { 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL", test.to_string());
+//    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+
+    assertEquals("Exception", test.linked_list_kth(-2));
   }
   @Test
-  @DisplayName("Can successfully insert after a node in the middle of the linked list")
-  void test5() {
+  @DisplayName("Where the linked list is of a size 1")
+  void test10() {
+    linkedlistStructure test = new linkedlistStructure();
+
+    test.append("11");
+//    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+
+    assertEquals("11", test.linked_list_kth(0));
+  }
+  @Test
+  @DisplayName("Where k is not a positive integer")
+  void test11() {
     linkedlistStructure test = new linkedlistStructure();
     test.insert("4");
     test.insert("1");
@@ -133,20 +211,8 @@ class AppTest {
     test.insert("2");
     test.append("10");
     test.append("11");
-    test.insert_after("4","15");
-    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 15 } -> { 10 } -> { 11 } -> NULL", test.to_string());
-  }
-  @Test
-  @DisplayName("Can successfully insert a node after the last node of the linked list")
-  void test6() {
-    linkedlistStructure test = new linkedlistStructure();
-    test.insert("4");
-    test.insert("1");
-    test.insert("7");
-    test.insert("2");
-    test.append("10");
-    test.append("11");
-    test.insert_after("11","15");
-    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> { 15 } -> NULL", test.to_string());
+//    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+
+    assertEquals("1", test.linked_list_kth(3));
   }
 }

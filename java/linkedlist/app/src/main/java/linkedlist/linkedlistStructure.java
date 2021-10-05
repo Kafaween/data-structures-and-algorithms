@@ -4,6 +4,38 @@ public class linkedlistStructure {
   protected  linkedlistNode head;
   private int size;
 
+
+
+  public linkedlistNode linked_list_zip(linkedlistStructure l1,linkedlistStructure l2){
+   linkedlistNode current1= l1.head;
+    linkedlistNode current2= l2.head;
+    linkedlistNode tmp;
+    linkedlistNode tmp2=current2;
+    if(l1.size>l2.size){
+    while (current1!=null&&current2!=null){
+      tmp=current1.getNext();
+      tmp2=current2;
+      current2=current2.getNext();
+      current1.setNext(tmp2);
+      current1.getNext().setNext(tmp);
+      current1=current1.getNext().getNext();
+    }}
+    else{
+      while (current1.getNext()!=null&&current2.getNext()!=null){
+        tmp=current1.getNext();
+        tmp2=current2;
+        current2=current2.getNext();
+        current1.setNext(tmp2);
+        current1.getNext().setNext(tmp);
+        current1=current1.getNext().getNext();
+
+      }
+        current1.setNext(current2);
+      }
+
+    return l1.head;
+  }
+
   public String linked_list_kth(int k){
 
     if(is_empty()){

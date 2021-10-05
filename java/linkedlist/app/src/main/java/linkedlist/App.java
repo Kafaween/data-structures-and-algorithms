@@ -26,6 +26,17 @@ public class App {
 
       list.linked_list_kth(6);
       System.out.println(list.linked_list_kth(2));
+      System.out.println("-------------------------------------------------------------------------");
+      linkedlistStructure list2 =new linkedlistStructure();
+      list2.insert("8");
+      list2.insert("5");
+      list2.insert("6");
+      list2.insert("2");
+      System.out.println(list.to_string());
+      System.out.println(list2.to_string());
 
+      list.linked_list_zip(list,list2);
+      System.out.println("after zipping");
+      System.out.println(list.to_string());
     }
 }

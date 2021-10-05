@@ -149,70 +149,128 @@ class AppTest {
 //    test.insert_after("11","15");
 //    assertEquals("{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> { 15 } -> NULL", test.to_string());
 //  }
+//  @Test
+//  @DisplayName("Where k is greater than the length of the linked list")
+//  void test7() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    test.append("10");
+//    test.append("11");
+////    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+//
+//    assertEquals("Exception", test.linked_list_kth(7));
+//  }
+//  @Test
+//  @DisplayName("Where k and the length of the list are the same")
+//  void test8() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    test.append("10");
+//    test.append("11");
+////    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+//
+//    assertEquals("Exception", test.linked_list_kth(6));
+//  }
+//  @Test
+//  @DisplayName("Where k is not a positive integer")
+//  void test9() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    test.append("10");
+//    test.append("11");
+////    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+//
+//    assertEquals("Exception", test.linked_list_kth(-2));
+//  }
+//  @Test
+//  @DisplayName("Where the linked list is of a size 1")
+//  void test10() {
+//    linkedlistStructure test = new linkedlistStructure();
+//
+//    test.append("11");
+////    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+//
+//    assertEquals("11", test.linked_list_kth(0));
+//  }
+//  @Test
+//  @DisplayName("Where k is not a positive integer")
+//  void test11() {
+//    linkedlistStructure test = new linkedlistStructure();
+//    test.insert("4");
+//    test.insert("1");
+//    test.insert("7");
+//    test.insert("2");
+//    test.append("10");
+//    test.append("11");
+////    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+//
+//    assertEquals("1", test.linked_list_kth(3));
+//  }
   @Test
-  @DisplayName("Where k is greater than the length of the linked list")
-  void test7() {
-    linkedlistStructure test = new linkedlistStructure();
-    test.insert("4");
-    test.insert("1");
-    test.insert("7");
-    test.insert("2");
-    test.append("10");
-    test.append("11");
-//    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+  @DisplayName("they both equal ")
+void test11() {
+  linkedlistStructure list1=new linkedlistStructure();
+  list1.append("1");
+  list1.append("3");
+  list1.append("5");
+  list1.append("7");
+  list1.append("9");
+  linkedlistStructure list2=new linkedlistStructure();
+  list2.append("2");
+  list2.append("4");
+  list2.append("6");
+  list2.append("8");
+  list1.linked_list_zip(list1,list2);
 
-    assertEquals("Exception", test.linked_list_kth(7));
+
+    assertEquals("{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> { 7 } -> { 8 } -> { 9 } -> NULL", list1.to_string());
   }
   @Test
-  @DisplayName("Where k and the length of the list are the same")
-  void test8() {
-    linkedlistStructure test = new linkedlistStructure();
-    test.insert("4");
-    test.insert("1");
-    test.insert("7");
-    test.insert("2");
-    test.append("10");
-    test.append("11");
-//    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+  @DisplayName("first bigger ")
+  void test12() {
+    linkedlistStructure list1=new linkedlistStructure();
+    list1.append("1");
+    list1.append("3");
+    list1.append("5");
+    list1.append("7");
+    list1.append("9");
+    linkedlistStructure list2=new linkedlistStructure();
+    list2.append("2");
+    list2.append("4");
+    list2.append("6");
+    list2.append("8");
 
-    assertEquals("Exception", test.linked_list_kth(6));
+    list1.linked_list_zip(list1,list2);
+
+
+    assertEquals("{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> { 7 } -> { 8 } -> { 9 } -> NULL", list1.to_string());
   }
   @Test
-  @DisplayName("Where k is not a positive integer")
-  void test9() {
-    linkedlistStructure test = new linkedlistStructure();
-    test.insert("4");
-    test.insert("1");
-    test.insert("7");
-    test.insert("2");
-    test.append("10");
-    test.append("11");
-//    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
+  @DisplayName("second is bigger")
+  void test13() {
+    linkedlistStructure list1=new linkedlistStructure();
+    list1.append("1");
+    list1.append("3");
+    list1.append("5");
+    list1.append("7");
+    linkedlistStructure list2=new linkedlistStructure();
+    list2.append("2");
+    list2.append("4");
+    list2.append("6");
+    list2.append("8");
+    list1.linked_list_zip(list1,list2);
 
-    assertEquals("Exception", test.linked_list_kth(-2));
+
+    assertEquals("{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> { 7 } -> { 8 } -> NULL", list1.to_string());
   }
-  @Test
-  @DisplayName("Where the linked list is of a size 1")
-  void test10() {
-    linkedlistStructure test = new linkedlistStructure();
 
-    test.append("11");
-//    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
-
-    assertEquals("11", test.linked_list_kth(0));
-  }
-  @Test
-  @DisplayName("Where k is not a positive integer")
-  void test11() {
-    linkedlistStructure test = new linkedlistStructure();
-    test.insert("4");
-    test.insert("1");
-    test.insert("7");
-    test.insert("2");
-    test.append("10");
-    test.append("11");
-//    "{ 2 } -> { 7 } -> { 1 } -> { 4 } -> { 10 } -> { 11 } -> NULL"
-
-    assertEquals("1", test.linked_list_kth(3));
-  }
 }

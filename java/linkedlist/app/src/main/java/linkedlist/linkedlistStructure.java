@@ -1,17 +1,18 @@
 package linkedlist;
-
+import Node.Node;
 public class linkedlistStructure {
-  protected  linkedlistNode head;
+  protected  Node head;
   private int size;
 
 
 
-  public linkedlistNode linked_list_zip(linkedlistStructure l1,linkedlistStructure l2){
-   linkedlistNode current1= l1.head;
-    linkedlistNode current2= l2.head;
-    linkedlistNode tmp;
-    linkedlistNode tmp2=current2;
+  public Node linked_list_zip(linkedlistStructure l1,linkedlistStructure l2){
+   Node current1= l1.head;
+    Node current2= l2.head;
+    Node tmp;
+    Node tmp2=current2;
     if(l1.size>l2.size){
+
     while (current1!=null&&current2!=null){
       tmp=current1.getNext();
       tmp2=current2;
@@ -50,7 +51,7 @@ public class linkedlistStructure {
       return "Exception";
     }
 
-    linkedlistNode c ;
+    Node c ;
     c=head;
     while (c.getNext()!=null && counter!=0){
       c=c.getNext();
@@ -67,12 +68,12 @@ public class linkedlistStructure {
 
   public void insert(String value){
     if(head ==null){
-      linkedlistNode node=new linkedlistNode(value);
+      Node node=new Node(value);
       head=node;
       size++;
     }
     else{
-      linkedlistNode node =new linkedlistNode((value));
+      Node node =new Node((value));
       node.setNext(head);
       head=node;
       size++;
@@ -86,7 +87,7 @@ public class linkedlistStructure {
     }
     else {
       System.out.println("Is "+value+"in the kist ???");
-      linkedlistNode current;
+      Node current;
       current=head;
       while (current!=null){
         if(current.getValue()==value){
@@ -102,17 +103,17 @@ public class linkedlistStructure {
 
   public  void  append(String value){
     if(head==null){
-      linkedlistNode node = new linkedlistNode(value);
+      Node node = new Node(value);
       head=node;
       size++;
     }
     else{
-      linkedlistNode currunt;
+      Node currunt;
       currunt=head;
       while(currunt.getNext()!=null){
         currunt=currunt.getNext();
       }
-      linkedlistNode node=new linkedlistNode(value);
+      Node node=new Node(value);
       currunt.setNext(node);
       size++;
     }
@@ -126,8 +127,8 @@ public void insert_before(String value,String new_value){
   else {
     boolean is_here=false;
     boolean first=false;
-    linkedlistNode currunt;
-    linkedlistNode node=new linkedlistNode(new_value);
+    Node currunt;
+    Node node=new Node(new_value);
     currunt=head;
     if(currunt.getValue()==value){
       first=true;
@@ -141,7 +142,7 @@ public void insert_before(String value,String new_value){
       currunt=currunt.getNext();
     }}
     if(is_here==true){
-      linkedlistNode temp=currunt.getNext();
+      Node temp=currunt.getNext();
       currunt.setNext(node);
       node.setNext(temp);
       size++;
@@ -166,8 +167,8 @@ public void insert_before(String value,String new_value){
     }
     else {
       boolean is_here=false;
-      linkedlistNode currunt;
-      linkedlistNode node=new linkedlistNode(new_value);
+      Node currunt;
+      Node node=new Node(new_value);
       currunt=head;
 
       while (currunt.getNext()!=null){
@@ -178,7 +179,7 @@ public void insert_before(String value,String new_value){
         currunt=currunt.getNext();
       }
       if(is_here==true){
-        linkedlistNode temp=currunt.getNext();
+        Node temp=currunt.getNext();
         currunt.setNext(node);
         node.setNext(temp);
         size++;
@@ -199,7 +200,7 @@ public void insert_before(String value,String new_value){
     if (head == null) {
       return "List is empty";
     } else {
-      linkedlistNode current;
+      Node current;
       current = head;
       String output="";
 

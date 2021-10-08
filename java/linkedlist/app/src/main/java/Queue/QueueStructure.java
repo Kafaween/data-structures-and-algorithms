@@ -40,7 +40,7 @@ public class QueueStructure {
   }
   public String peek() throws Exception {
     if(isEpmty()){
-      throw new Exception("this list is epmty");
+      throw new Exception("this list is empty");
     }
     else{
       return front.getValue();

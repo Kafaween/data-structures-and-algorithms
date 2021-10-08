@@ -19,7 +19,7 @@ adds a new node with the given new value immediately after the first node that h
 ## Whiteboard Process
 ![](append.PNG)
 
-![](insert before.PNG)
+![](insert_before.PNG)
 
 ![](inser_after.PNG)
 ## Approach & Efficiency

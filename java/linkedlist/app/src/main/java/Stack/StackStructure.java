@@ -40,6 +40,15 @@ public class StackStructure {
       return value;
     }
   }
+
+  public int getSize() {
+    return size;
+  }
+
+  public void setSize(int size) {
+    this.size = size;
+  }
+
   public String peek() throws Exception {
     if(isEmpty()){
       throw new Exception("this list is epmty");

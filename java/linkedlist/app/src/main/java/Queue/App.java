@@ -3,7 +3,7 @@ package Queue;
 import Stack.StackStructure;
 
 public class App {
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
     QueueStructure Q=new QueueStructure();
 
     Q.enqueue("s");
@@ -14,6 +14,7 @@ public class App {
     System.out.println(Q.dequeue());
     System.out.println(Q.dequeue());
     System.out.println(Q.to_string());
+    System.out.println(Q.peek());
   }
 
 }

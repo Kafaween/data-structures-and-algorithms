@@ -58,7 +58,7 @@ public class AppTest {
   }
   @Test
   @DisplayName("Can successfully empty a queue after multiple dequeues")
-  void test12()  throws Exception {
+  void test12()   {
     QueueStructure Q=new QueueStructure();
     Q.enqueue("s");
     Q.enqueue("t");

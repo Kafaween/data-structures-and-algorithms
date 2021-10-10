@@ -3,12 +3,43 @@
  */
 package q1;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+public class App {
+
+
+  public static void main(String[] args) {
+
+    int[][] test = {{1, 2, 3}, {3, 5, 7}, {1, 7, 10}};
+
+    System.out.println(Arrays.toString(sumArray(test)));
+    System.out.println(fabunci(14));
+  }
+
+  public static int[] sumArray(int[][] arr) {
+    int[] demo = new int[arr.length];
+
+    for (int i = 0; i < arr.length; i++) {
+      int sum = 0;
+      for (int y = 0; y < arr[i].length; y++) {
+        sum = sum + arr[i][y];
+      }
+      demo[i] = sum;
     }
+    return demo;
+  }
+  public static int fabunci(int x ){
+    int before=0;
+    int befor_before=1;
+    int sum=0;
+    for (int i =2;i<x+1;i++){
+      sum=before+befor_before;
+      befor_before=before;
+      before=sum;
+    }
+    return before+befor_before;
+  }
 }

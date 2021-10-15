@@ -1,0 +1,107 @@
+package BinaryTrees;
+
+public class TreeStrucutre<T extends Comparable<T>> {
+  private TreeNode<T> root;
+  static String str;
+  public void insert(T data){
+    if(root==null) root = new TreeNode<>(data);
+    else{
+          insertHelper(root,data);
+    }
+  }
+  private void insertHelper(TreeNode<T> root,T data){
+    TreeNode<T> node= new TreeNode<>(data);
+    if(root.getValue().compareTo(data)>0){
+      if(root.getLeft()==null){
+        root.setLeft(node);
+      }
+      else{
+        insertHelper(root.getLeft(),data);
+      }
+    }
+    else if (root.getValue().compareTo(data)<0){
+      if(root.getRight()==null){
+        root.setRight(node);
+      }
+      else{
+        insertHelper(root.getRight(),data);
+      }
+    }
+  }
+
+
+  public void inorderTraversal() {
+    if (isEmpty()) {
+      return;
+    }
+    traverseInorder(root);
+  }
+  private void traverseInorder(TreeNode<T> root) {
+    if (root.getLeft() != null) {
+      traverseInorder(root.getLeft());
+    }
+    System.out.print(root.getValue() + " -> ");
+    if (root.getRight() != null) {
+      traverseInorder(root.getRight());
+    }
+  }
+
+  public void PreorderTraversal() {
+    if (isEmpty()) {
+      return;
+    }
+    traversePreorder(root);
+  }
+  private void traversePreorder(TreeNode<T> root) {
+    System.out.print(root.getValue() + " -> ");
+    if (root.getLeft() != null) {
+      traversePreorder(root.getLeft());
+    }
+
+    if (root.getRight() != null) {
+      traversePreorder(root.getRight());
+    }
+  }
+
+  public void  PostorderTraversal() {
+    if (isEmpty()) {
+      return;
+    }
+    traversePostorder(root);
+  }
+  private void  traversePostorder(TreeNode<T> root){
+    if (root.getLeft() != null) {
+      traversePostorder(root.getLeft());
+    }
+    if (root.getRight() != null) {
+      traversePostorder(root.getRight());
+    }
+    System.out.print(root.getValue() + " -> ");
+  }
+
+  public  boolean Contains( T data)
+  {
+    while(root != null)
+    {
+      if(root.getValue().compareTo(data)==0) return true;
+      if(root.getValue().compareTo(data)>0) root = root.getLeft();
+      else root = root.getRight();
+    }
+    return false;
+  }
+
+
+
+
+
+
+
+
+
+  public boolean isEmpty(){
+    if (root==null){
+      return true;
+    }
+    else return false;
+  }
+}

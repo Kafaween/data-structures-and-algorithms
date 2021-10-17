@@ -54,4 +54,17 @@ public class AppTest {
 
     assertEquals(false, binaryTree.isEmpty());
   }
+  @Test
+  @DisplayName("Can successfully return a max value")
+  void test7() {
+    TreeStrucutre<Integer> binaryTree= new TreeStrucutre<>();
+    binaryTree.insert(10);
+    binaryTree.insert(5);
+    binaryTree.insert(2);
+    binaryTree.insert(15);
+    binaryTree.insert(12);
+    binaryTree.insert(20);
+
+    assertEquals(20, binaryTree.findMax());
+  }
 }

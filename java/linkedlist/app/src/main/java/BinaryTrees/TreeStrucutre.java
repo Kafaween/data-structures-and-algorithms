@@ -3,6 +3,7 @@ package BinaryTrees;
 public class TreeStrucutre<T extends Comparable<T>> {
   private TreeNode<T> root;
   static String str;
+  static Integer max=0;
   public void insert(T data){
     if(root==null) root = new TreeNode<>(data);
     else{
@@ -90,14 +91,27 @@ public class TreeStrucutre<T extends Comparable<T>> {
     return false;
   }
 
+  public  int findMax() {
+    if (isEmpty()) {
+      return 0;
+    }
 
+    max=  findMaxHelper(root);
+    return max;
+  }
+  private int findMaxHelper(TreeNode<T> root) {
+    if(root.getValue().compareTo((T)max)>0){
+      max= (Integer) root.getValue();
+    }
+    if (root.getLeft() != null) {
+      findMaxHelper(root.getLeft());
+    }
 
-
-
-
-
-
-
+    if (root.getRight() != null) {
+      findMaxHelper(root.getRight());
+    }
+    return (Integer) max;
+  }
   public boolean isEmpty(){
     if (root==null){
       return true;

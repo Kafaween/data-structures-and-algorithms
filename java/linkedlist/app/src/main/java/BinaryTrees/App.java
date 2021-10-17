@@ -15,7 +15,9 @@ public class App {
     System.out.println("-----------pre order--------");
     binaryTree.PostorderTraversal();
     System.out.println("------------post order--------");
-    System.out.println(binaryTree.Contains(20));
+//    System.out.println(binaryTree.Contains(20));
+    int max =binaryTree.findMax();
+    System.out.println(max);
 
 
   }

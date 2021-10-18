@@ -1,5 +1,7 @@
 package BinaryTrees;
 
+import java.util.*;
+
 public class TreeStrucutre<T extends Comparable<T>> {
   private TreeNode<T> root;
   static String str;
@@ -95,7 +97,6 @@ public class TreeStrucutre<T extends Comparable<T>> {
     if (isEmpty()) {
       return 0;
     }
-
     max=  findMaxHelper(root);
     return max;
   }
@@ -112,6 +113,30 @@ public class TreeStrucutre<T extends Comparable<T>> {
     }
     return (Integer) max;
   }
+
+  public  List<T> tree_breadth_first(TreeStrucutre<T> tree) {
+    if (isEmpty()) {
+      return null;
+    }
+    List<T> breadth= new ArrayList<>();
+  TreeNode<T> node=tree.root;
+    Queue<TreeNode<T>> queue = new LinkedList<>();
+    queue.add(node);
+    while (!queue.isEmpty()){
+
+      if(queue.peek().getLeft()!=null){
+        queue.add(queue.peek().getLeft());
+      }
+      if(queue.peek().getRight()!=null){
+        queue.add(queue.peek().getRight());
+      }
+      breadth.add(queue.poll().getValue());
+    }
+
+  return breadth;
+  }
+
+
   public boolean isEmpty(){
     if (root==null){
       return true;

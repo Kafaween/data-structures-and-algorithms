@@ -67,4 +67,17 @@ public class AppTest {
 
     assertEquals(20, binaryTree.findMax());
   }
+  @Test
+  @DisplayName("Can successfully return a breadth list")
+  void test8() {
+    TreeStrucutre<Integer> binaryTree= new TreeStrucutre<>();
+    binaryTree.insert(10);
+    binaryTree.insert(5);
+    binaryTree.insert(2);
+    binaryTree.insert(15);
+    binaryTree.insert(12);
+    binaryTree.insert(20);
+
+    assertEquals("[10, 5, 15, 2, 12, 20]", binaryTree.tree_breadth_first(binaryTree).toString());
+  }
 }

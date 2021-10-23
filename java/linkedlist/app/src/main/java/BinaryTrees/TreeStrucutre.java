@@ -136,7 +136,6 @@ public class TreeStrucutre<T extends Comparable<T>> {
   return breadth;
   }
 
-
   public boolean isEmpty(){
     if (root==null){
       return true;

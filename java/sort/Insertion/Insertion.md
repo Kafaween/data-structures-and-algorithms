@@ -29,7 +29,7 @@ Pass 1 of Insertion Sort
 
 The fist iteration i = 1. Since 4 is smaller than 8, move 8 and insert 4 before 8
 
-![](Insertion/images/pass1.PNG)
+![](../Insertion/images/pass1.PNG)
 
 Pass 2:
 
@@ -37,7 +37,7 @@ Pass 2 of Insertion Sort
 
 The second iteration i = 2. Since 23 is bigger than 8, so it's the same
 
-![](Insertion/images/pass2.PNG)
+![](../Insertion/images/pass2.PNG)
 
 Pass 3:
 
@@ -45,7 +45,7 @@ Pass 3 of Insertion Sort
 
 The three iteration i = 2. Since 42 is bigger than 23, so its the same
 
-![](Insertion/images/pass3.PNG)
+![](../Insertion/images/pass3.PNG)
 
 Pass 4:
 
@@ -53,13 +53,13 @@ Pass 4 of Insertion Sort
 
 
 
-![](Insertion/images/pass4.PNG)
+![](../Insertion/images/pass4.PNG)
 
 Pass 5:
 
 Pass 5 of Insertion Sort
 
-![](Insertion/images/pass5.PNG)
+![](../Insertion/images/pass5.PNG)
 
 
 

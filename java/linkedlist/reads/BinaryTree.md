@@ -66,7 +66,7 @@ Algorithm Postorder(tree)
 
 ### Whiteboards
 
-![](tree_traversal.PNG)
+![](../images/tree_traversal.PNG)
 
 
-![](Tree_insert.PNG)
+![](../images/Tree_insert.PNG)

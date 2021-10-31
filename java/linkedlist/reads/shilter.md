@@ -25,7 +25,7 @@ If pref is not "dog" or "cat" then return null.
 
 ## Whiteboard Process
 
-![](shilter.PNG)
+![](../images/shilter.PNG)
 
 ## Approach & Efficiency
 

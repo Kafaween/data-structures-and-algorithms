@@ -17,11 +17,11 @@ arguments: value, new value
 adds a new node with the given new value immediately after the first node that has the value specified
 
 ## Whiteboard Process
-![](append.PNG)
+![](../images/append.PNG)
 
-![](insert_before.PNG)
+![](../images/insert_before.PNG)
 
-![](inser_after.PNG)
+![](../images/inser_after.PNG)
 ## Approach & Efficiency
 
 ### Apend

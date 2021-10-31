@@ -22,9 +22,9 @@ Arguments: none
 Extracts a value from the PseudoQueue, using a first-in, first-out approach.h
 
 ## Whiteboard Process
-![](psudeo_enqueue.PNG)
+![](../images/psudeo_enqueue.PNG)
 
-![](dequeue_psudo.PNG)
+![](../images/dequeue_psudo.PNG)
 
 ## Approach & Efficiency
 

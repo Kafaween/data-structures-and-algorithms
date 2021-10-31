@@ -8,7 +8,7 @@ Return: new k-ary tree
 
 ## Whiteboard Process
 
-![](Code Challenge 18.jpg)
+![](images/CodeChallenge18.jpg)
 
 ## Approach & Efficiency
 

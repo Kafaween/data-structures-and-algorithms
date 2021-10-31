@@ -7,7 +7,7 @@ You have access to the Node class and all the properties on the Linked List clas
 
 
 ## Whiteboard Process
-![](./linked-k.PNG)
+![](../images/linked-k.PNG)
 
 ## Approach & Efficiency
 1-first we need to subtract the the the argument k from the size of the array to walk throw the linked list normaly and subtract 1 from the total and assignt that value o a counter

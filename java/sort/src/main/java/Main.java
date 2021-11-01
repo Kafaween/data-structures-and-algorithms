@@ -2,20 +2,16 @@ import java.util.Arrays;
 
 public class Main {
   public static void main(String[] args) {
-  int[] arr={20,18,12,8,5,-2};
+  int[] arr={20,18,12,8,5,-2,111,123,4,6,300};
+  Insertion insertion= new Insertion();
     System.out.println(Arrays.toString(arr));
-    InsertionSort(arr);
+    insertion.InsertionSort(arr);
     System.out.println(Arrays.toString(arr));
+    int[] arr1={20,18,12,8,5,-2,111,123,4,6,300};
+  Merge merge=new Merge();
+    System.out.println(Arrays.toString(arr1));
+    merge.MergeSort(arr1);
+    System.out.println(Arrays.toString(arr1));
   }
-  public static void InsertionSort(int[] arr){
-    for (int i=1 ;i<arr.length;i++){
-      int j=  i-1;
-      int temp=arr[i];
-      while (j >= 0 && arr[j] > temp) {
-        arr[j + 1] = arr[j];
-        j = j - 1;
-      }
-      arr[j + 1] = temp;
-    }
-  }
+
 }

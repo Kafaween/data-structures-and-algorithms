@@ -20,5 +20,13 @@ public class Main {
 
     assertEquals(Arrays.toString(arr),"[-2, 5, 8, 12, 18, 20]");
     }
+  @Test
+  @DisplayName("Can sort right")
+  void test2() {
+    int[] arr1={8,4,23,42,16,15};
+    Merge merge=new Merge();
+    merge.MergeSort(arr1);
+    assertEquals("[4, 8, 15, 16, 23, 42]",Arrays.toString(arr1) );
+  }
   }
 

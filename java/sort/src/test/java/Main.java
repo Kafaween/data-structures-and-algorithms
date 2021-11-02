@@ -28,5 +28,13 @@ public class Main {
     merge.MergeSort(arr1);
     assertEquals("[4, 8, 15, 16, 23, 42]",Arrays.toString(arr1) );
   }
+  @Test
+  @DisplayName("Can sort right")
+  void test3() {
+    int[] arr1={8,4,23,42,16,15};
+    Quick quick= new Quick();
+    quick.quickSort(arr1, 0, arr1.length-1);
+    assertEquals("[4, 8, 15, 16, 23, 42]",Arrays.toString(arr1) );
+  }
   }
 

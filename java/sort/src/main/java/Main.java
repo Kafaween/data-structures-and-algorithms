@@ -12,6 +12,12 @@ public class Main {
     System.out.println(Arrays.toString(arr1));
     merge.MergeSort(arr1);
     System.out.println(Arrays.toString(arr1));
+    System.out.println("----------------------------------");
+    int[] arr2={8,4,23,42,16,15};
+    System.out.println(Arrays.toString((arr2)));
+    Quick quick= new Quick();
+    quick.quickSort(arr2, 0, arr2.length-1);
+    System.out.println(Arrays.toString((arr2)));
   }
 
 }

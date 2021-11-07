@@ -42,16 +42,18 @@ public class App {
 //
 //      test.insert("3");
 //      test.insert("1");
-      Test test2 =new Test();
-      test2.insert("a");
-      test2.insert("b");
-      test2.insert("c");
-      test2.insert("c");
-      test2.insert("b");
-      test2.insert("a");
-      System.out.println(test2.to_string());
 
-      System.out.println(test2.palindrom());
+      linkedlistStructure link= new linkedlistStructure();
+      link.append("2");
+      link.append("1");
+      link.append("3");
+      link.append("5");
+      link.append("6");
+      link.append("4");
+      link.append("7");
+      System.out.println(link.to_string());
+      linkedlistStructure x=link.Test();
+      System.out.println(x.to_string());
 
 
 

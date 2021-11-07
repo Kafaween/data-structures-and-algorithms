@@ -4,6 +4,71 @@ public class linkedlistStructure {
   protected  Node head;
   private int size;
 
+  public linkedlistStructure Test(){
+    Node current=head;
+    linkedlistStructure l1= new linkedlistStructure();
+    linkedlistStructure l2= new linkedlistStructure();
+    boolean odd=true;
+    while (current!=null){
+      if(odd) {
+        l1.append(current.getValue());
+        odd=false;
+      }
+      else {
+        l2.append(current.getValue());
+        odd=true;
+      }
+      current=current.getNext();
+    }
+    current=l1.head;
+    while (current.getNext()!=null){
+      current=current.getNext();
+    }
+    current.setNext(l2.head);
+    return l1;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  public void Sort(){
+//    Node max= head;
+//    Node current= head.getNext();
+//    Node prev= head;
+//
+//    while (current!=null){
+//      if(Integer.parseInt(current.getValue())<Integer.parseInt(max.getValue())){
+//        Node tmp= current.getNext();
+//        current.setNext(max);
+//        max=current;
+//       prev.setNext(tmp);
+//       current=tmp;
+//      }
+//      else {
+//        current =  current.getNext();
+//        prev =  prev.getNext();
+//      }
+//    }
+//    head=max;
+//  }
+
+
+
+
+
+
 
 
   public Node linked_list_zip(linkedlistStructure l1,linkedlistStructure l2){

@@ -60,7 +60,7 @@ public class HashTableTest {
   @DisplayName("Successfully handle a collision within the hashtable")
   void test5()   {
     HashTable<String, Integer> studentAllowances = new HashTable<>();
-    studentAllowances.add("Johnn", 300);
+    studentAllowances.add("John", 300);
     studentAllowances.add("Sally", 400);
     studentAllowances.add("Tom", 200);
 

@@ -7,7 +7,7 @@ public class TreeStrucutre<T extends Comparable<T>> {
   private TreeNode<T> root;
   static String str;
   static Integer max = 0;
-
+ public List<T> tree= new ArrayList<>();
   public TreeStrucutre() {
   }
 
@@ -38,98 +38,23 @@ public class TreeStrucutre<T extends Comparable<T>> {
 
   public void inorderTraversal() {
     if (!this.isEmpty()) {
+
       this.traverseInorder(this.root);
     }
   }
-
   private void traverseInorder(TreeNode<T> root) {
+
     if (root.getLeft() != null) {
       this.traverseInorder(root.getLeft());
     }
-
-    System.out.print(root.getValue() + " -> ");
+    tree.add(root.getValue());
     if (root.getRight() != null) {
       this.traverseInorder(root.getRight());
     }
 
-  }
-
-  public void PreorderTraversal() {
-    if (!this.isEmpty()) {
-      this.traversePreorder(this.root);
-    }
-  }
-
-  private void traversePreorder(TreeNode<T> root) {
-    System.out.print(root.getValue() + " -> ");
-    if (root.getLeft() != null) {
-      this.traversePreorder(root.getLeft());
-    }
-
-    if (root.getRight() != null) {
-      this.traversePreorder(root.getRight());
-    }
 
   }
 
-  public void PostorderTraversal() {
-    if (!this.isEmpty()) {
-      this.traversePostorder(this.root);
-    }
-  }
-
-  private void traversePostorder(TreeNode<T> root) {
-    if (root.getLeft() != null) {
-      this.traversePostorder(root.getLeft());
-    }
-
-    if (root.getRight() != null) {
-      this.traversePostorder(root.getRight());
-    }
-
-    System.out.print(root.getValue() + " -> ");
-  }
-
-  public boolean Contains(T data) {
-    while(this.root != null) {
-      if (((Comparable)this.root.getValue()).compareTo(data) == 0) {
-        return true;
-      }
-
-      if (((Comparable)this.root.getValue()).compareTo(data) > 0) {
-        this.root = this.root.getLeft();
-      } else {
-        this.root = this.root.getRight();
-      }
-    }
-
-    return false;
-  }
-
-  public int findMax() {
-    if (this.isEmpty()) {
-      return 0;
-    } else {
-      max = this.findMaxHelper(this.root);
-      return max;
-    }
-  }
-
-  private int findMaxHelper(TreeNode<T> root) {
-    if (((Comparable)root.getValue()).compareTo(max) > 0) {
-      max = (Integer)root.getValue();
-    }
-
-    if (root.getLeft() != null) {
-      this.findMaxHelper(root.getLeft());
-    }
-
-    if (root.getRight() != null) {
-      this.findMaxHelper(root.getRight());
-    }
-
-    return max;
-  }
 
 
 

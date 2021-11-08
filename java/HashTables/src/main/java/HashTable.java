@@ -1,11 +1,53 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
-public class HashTable<K,V> {
+public class HashTable<K extends Comparable<K>,V> {
 
   private ArrayList<HashNode<K, V>> bucketArray;
   private int size;
   private int numBuckets;
+
+
+public List<K> tree_intersection(TreeStrucutre<K> tree1,TreeStrucutre<K> tree2 ){
+  tree1.inorderTraversal();
+  tree2.inorderTraversal();
+  tree1.tree.addAll(tree2.tree);
+  List<K> list= tree1.tree;
+  List<K> lastList=new ArrayList<>();
+  for(K i:list){
+    int bucketIndex = getBucketIndex((K) i);
+    int hashCode = hashCode((K)i);
+    HashNode<K, V> head = bucketArray.get(bucketIndex);
+    while (head != null) {
+      if (head.key.equals(i) && head.hashCode == hashCode) {
+        head.value =(V) i;
+        lastList.add(i);
+      }
+      head = head.next;
+    }
+    size++;
+    head = bucketArray.get(bucketIndex);
+    HashNode<K, V> newNode = new HashNode<>((K) i, (V) i, hashCode);
+    newNode.next = head;
+    bucketArray.set(bucketIndex, newNode);
+    if ((1.0 * size) / numBuckets >= 0.7) {
+      ArrayList<HashNode<K, V>> temp = bucketArray;
+      bucketArray = new ArrayList<>();
+      numBuckets = 2 * numBuckets;
+      size = 0;
+      for (int index = 0; index < numBuckets; index++) {
+        bucketArray.add(null);
+      }
+      for (HashNode<K, V> headNode : temp) {
+        while (headNode != null) {
+          add(headNode.key, headNode.value);
+          headNode = headNode.next;
+        }
+      }
+    }
+  }
+  return lastList;
+}
 
   public String hashmap_repeated_word(String string){
     String[] words = string.split("\\s+");

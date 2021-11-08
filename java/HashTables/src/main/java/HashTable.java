@@ -7,6 +7,32 @@ public class HashTable<K,V> {
   private int size;
   private int numBuckets;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   public String hashmap_repeated_word(String string){
     String[] words = string.split("\\s+");
     for (int i = 0; i < words.length; i++) {

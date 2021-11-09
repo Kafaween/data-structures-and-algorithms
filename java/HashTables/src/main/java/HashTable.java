@@ -8,6 +8,39 @@ public class HashTable<K extends Comparable<K>,V> {
   private int numBuckets;
 
 
+  public List<List<String>> hashmap_left_join(HashTable<K,V> table1,HashTable<K,V> table2){
+    List<List<String>> listOfLists = new ArrayList<>();
+    for (HashNode<K,V> node:bucketArray){
+      HashNode<K,V> head=node;
+      while (head!=null){
+        List<String> innerLest= new ArrayList<>();
+        innerLest.add((String) head.key) ;
+        innerLest.add((String) head.value);
+       innerLest.add((String) table2.get(head.key)) ;
+       listOfLists.add(innerLest);
+       head=head.next;
+      }
+    }
+   return listOfLists;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 public List<K> tree_intersection(TreeStrucutre<K> tree1,TreeStrucutre<K> tree2 ){
   tree1.inorderTraversal();
   tree2.inorderTraversal();

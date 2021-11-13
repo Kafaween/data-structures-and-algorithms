@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Graph" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-11-13T19:38:29" hostname="DESKTOP-VF117IG" time="0.054">
+  <properties/>
+  <testcase name="Node can be successfully added to the graph" classname="Graph" time="0.026"/>
+  <testcase name="An edge can be successfully added to the graph" classname="Graph" time="0.003"/>
+  <testcase name="A collection of all nodes can be properly retrieved from the graph" classname="Graph" time="0.001"/>
+  <testcase name="All appropriate neighbors can be retrieved from the graph" classname="Graph" time="0.001"/>
+  <testcase name="Neighbors are returned with the weight between nodes included" classname="Graph" time="0.001"/>
+  <testcase name="The proper size is returned, representing the number of nodes in the graph" classname="Graph" time="0.0"/>
+  <testcase name="A graph with only one node and edge can be properly returned" classname="Graph" time="0.018"/>
+  <testcase name="An empty graph properly returns null" classname="Graph" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

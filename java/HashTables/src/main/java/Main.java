@@ -51,19 +51,21 @@ public class Main {
 //    System.out.println(hashTable.hashmap_repeated_word(s));
 //    System.out.println(hashTable.tree_intersection(tree1,tree2).toString());
     ;
-    hashTable1.add("fond", "enamored");
-    hashTable1.add("wrath", "anger");
-    hashTable1.add("diligent", "employed");
-    hashTable1.add("outfit", "garb");
-    hashTable1.add("guide", "usher");
-
-    hashTable2.add("fond", "averse");
-    hashTable2.add("wrath", "delight");
-    hashTable2.add("diligent", "idle");
-    hashTable2.add("guide", "follow");
-    hashTable2.add("flow", "jam");
-    List<List<String>> listOfLists =hashTable1.hashmap_left_join(hashTable1,hashTable2);
-    System.out.println(listOfLists);
-
+//    hashTable1.add("fond", "enamored");
+//    hashTable1.add("wrath", "anger");
+//    hashTable1.add("diligent", "employed");
+//    hashTable1.add("outfit", "garb");
+//    hashTable1.add("guide", "usher");
+//
+//    hashTable2.add("fond", "averse");
+//    hashTable2.add("wrath", "delight");
+//    hashTable2.add("diligent", "idle");
+//    hashTable2.add("guide", "follow");
+//    hashTable2.add("flow", "jam");
+//    List<List<String>> listOfLists =hashTable1.hashmap_left_join(hashTable1,hashTable2);
+//    System.out.println(listOfLists);
+    String string="In a galaxy away far  far  away";
+    String answer=hashTable1.most_common_word(string);
+    System.out.println(answer);
   }
 }

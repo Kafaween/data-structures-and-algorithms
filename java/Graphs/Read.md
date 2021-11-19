@@ -46,7 +46,7 @@ Big O
 
 4. get neighbors
    time o(1) no looping
-   space o(n) 
+   space o(n)
 
 5. size
    time o(1) no looping

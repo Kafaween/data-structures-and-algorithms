@@ -27,7 +27,6 @@ public class Test {
     linkedlistNode current=head;
     linkedlistNode prev= null;
     linkedlistNode next = null;
-
     while (current!=null){
       next=(linkedlistNode) current.getNext();
       current.setNext(prev);
@@ -36,50 +35,17 @@ public class Test {
     }
     head=prev;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-  public linkedlistNode Zip(Test l1,Test l2){
-    if(l1.size==0&&l2.size==0)return null;
-    if(l1.size==0)return l2.head;
-    if(l2.size==0)return l1.head;
-    linkedlistNode current1=l1.head;
-    linkedlistNode current2=l2.head;
-    boolean smaller=false;
-    while (current1!=null&&current2!=null){
-     linkedlistNode tmp=(linkedlistNode) current1.getNext();
-      linkedlistNode tmp2=(linkedlistNode) current2;
-      current2= (linkedlistNode) current2.getNext();
-     current1.setNext(tmp2);
-      current1.getNext().setNext(tmp);
-      if(tmp==null){
-        smaller=true;
-        break;
-      }
-      current1=(linkedlistNode) current1.getNext().getNext();
-    }
-    if(smaller==true){
-      current1.getNext().setNext(current2);
-    }
-    return l1.head;
-  }
-
-
-
-
-
-
-
-
+//  public linkedlistNode Zip(Test l1,Test l2){
+//    if(l1.size==0&&l2.size==0)return null;
+//
+//   linkedlistNode current1=l1.head;
+//    linkedlistNode current2=l2.head;
+//    while (current1!=null&&current2!=null){
+//      linkedlistNode tmp=(linkedlistNode) current1.getNext();
+//      linkedlistNode tmp2=(linkedlistNode)current2.getNext();
+//      current1.setNext();
+//    }
+//  }
   public void InsertAfter(String value,String newV){
     if(head==null){
       System.out.println("list is empty");

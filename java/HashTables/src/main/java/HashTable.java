@@ -1,27 +1,104 @@
 import java.lang.reflect.Array;
 import java.util.*;
-
-public class HashTable<K extends Comparable<K>,V> {
+public class HashTable<K extends Comparable<K>,V extends Comparable<V>> {
 
   private ArrayList<HashNode<K, V>> bucketArray;
   private int size;
   private int numBuckets;
 
 
-  public List<List<String>> hashmap_left_join(HashTable<K,V> table1,HashTable<K,V> table2){
-    List<List<String>> listOfLists = new ArrayList<>();
-    for (HashNode<K,V> node:bucketArray){
-      HashNode<K,V> head=node;
-      while (head!=null){
-        List<String> innerLest= new ArrayList<>();
-        innerLest.add((String) head.key) ;
-        innerLest.add((String) head.value);
-       innerLest.add((String) table2.get(head.key)) ;
-       listOfLists.add(innerLest);
-       head=head.next;
+  public boolean unique_characters(String string){
+    String[] words = string.split("");
+    String[] s=words;
+    for(String i:s){
+      if(i.equals(" ")) {
+        continue;
+      }
+      i=i.toLowerCase(Locale.ROOT);
+      int bucketIndex = getBucketIndex((K) i);
+      int hashCode = hashCode((K)i);
+      HashNode<K, V> head = bucketArray.get(bucketIndex);
+      while (head != null) {
+        if (head.key.equals(i) && head.hashCode == hashCode) {
+         return false;
+
+        }
+        head = head.next;
+      }
+      size++;
+      head = bucketArray.get(bucketIndex);
+      Integer initial=1;
+      HashNode<K, V> newNode = new HashNode<>((K) i,(V)i , hashCode);
+      newNode.next = head;
+      bucketArray.set(bucketIndex, newNode);
+      if ((1.0 * size) / numBuckets >= 0.7) {
+        ArrayList<HashNode<K, V>> temp = bucketArray;
+        bucketArray = new ArrayList<>();
+        numBuckets = 2 * numBuckets;
+        size = 0;
+        for (int index = 0; index < numBuckets; index++) {
+          bucketArray.add(null);
+        }
+        for (HashNode<K, V> headNode : temp) {
+          while (headNode != null) {
+            add(headNode.key, headNode.value);
+            headNode = headNode.next;
+          }
+        }
       }
     }
-   return listOfLists;
+    return true;
+  }
+
+  public String most_common_word(String string){
+    Integer least =  Integer.MIN_VALUE;
+    String[] words = string.split("\\s+");
+    for (int i = 0; i < words.length; i++) {
+      words[i] = words[i].replaceAll("[^\\w]", "");
+    }
+    String[] s=words;
+    int tmp = hashCode((K)s[0]);
+    HashNode<K,V> most= new HashNode<>((K)s[0],(V) least,tmp);
+    for(String i:s){
+      i=i.toLowerCase(Locale.ROOT);
+      int bucketIndex = getBucketIndex((K) i);
+      int hashCode = hashCode((K)i);
+      HashNode<K, V> head = bucketArray.get(bucketIndex);
+      while (head != null) {
+        if (head.key.equals(i) && head.hashCode == hashCode) {
+           Integer c= (Integer) head.value;
+           c++;
+           head.value=(V) c;
+           if(c>(Integer) most.value){
+             most=head;
+           }
+
+        }
+        head = head.next;
+      }
+      size++;
+      head = bucketArray.get(bucketIndex);
+      Integer initial=1;
+      HashNode<K, V> newNode = new HashNode<>((K) i,(V)initial , hashCode);
+      newNode.next = head;
+      bucketArray.set(bucketIndex, newNode);
+      if ((1.0 * size) / numBuckets >= 0.7) {
+        ArrayList<HashNode<K, V>> temp = bucketArray;
+        bucketArray = new ArrayList<>();
+        numBuckets = 2 * numBuckets;
+        size = 0;
+        for (int index = 0; index < numBuckets; index++) {
+          bucketArray.add(null);
+        }
+        for (HashNode<K, V> headNode : temp) {
+          while (headNode != null) {
+            add(headNode.key, headNode.value);
+            headNode = headNode.next;
+          }
+        }
+      }
+    }
+    return (String) most.key;
   }
 
 
@@ -40,6 +117,22 @@ public class HashTable<K extends Comparable<K>,V> {
 
 
 
+
+  public List<List<String>> hashmap_left_join(HashTable<K,V> table1,HashTable<K,V> table2){
+    List<List<String>> listOfLists = new ArrayList<>();
+    for (HashNode<K,V> node:bucketArray){
+      HashNode<K,V> head=node;
+      while (head!=null){
+        List<String> innerLest= new ArrayList<>();
+        innerLest.add((String) head.key) ;
+        innerLest.add((String) head.value);
+       innerLest.add((String) table2.get(head.key)) ;
+       listOfLists.add(innerLest);
+       head=head.next;
+      }
+    }
+   return listOfLists;
+  }
 
 public List<K> tree_intersection(TreeStrucutre<K> tree1,TreeStrucutre<K> tree2 ){
   tree1.inorderTraversal();
